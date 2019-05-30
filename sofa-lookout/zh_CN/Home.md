@@ -24,4 +24,6 @@ EXTS:  |   JVM,OS,GC...       +----+
 
 ## 服务器端服务
 
-SOFALookout Server 可以帮助我们解决分布式环境下系统状态度量的问题，它的数据源包括但不限于使用 lookout-client 包的项目。服务端将在下个版本中提供，敬请期待。
+SOFALookout Metrics Server 可以帮助我们解决分布式环境下系统状态度量的问题，它的数据源包括使用自有 lookout-client，还支持 Prometheus 的数据协议（推模式和拉模式），Metricbeat 协议（版本是6），Opentsdb 协议的数据上报。
+
+Metrics Server 兼容和增强了 Prometheus 的数据及元数据查询的 RESTful API。同样对应 PromQL 我们也基本实现了兼容和增强（不包括 Alert 相关语法），Lookout 的 promQL 相关解析逻辑是从 Prometheus 移植而来，做了一些优化和改进。
